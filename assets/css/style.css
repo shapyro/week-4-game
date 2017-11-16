@@ -1,0 +1,8 @@
+* {
+  text-align: center;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('../images/halftone-yellow.png');
+}
