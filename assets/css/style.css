@@ -1,8 +1,29 @@
 * {
   text-align: center;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   background-image: url('../images/halftone-yellow.png');
+}
+
+.gems {
+  position:absolute; 
+  top:50px; 
+  left: 80px; 
+  z-index: -20; 
+  height: 150px;
+  background: white;
+  margin: 43px;
+  padding: 20px;
+  background-image: url('../images/southpark.jpg');
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.cartman-image {
+  width: 200px; 
+  height: 200px;
+  margin: 10px;
 }
