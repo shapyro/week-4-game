@@ -6,19 +6,22 @@
 //  start game over and over keeping tallies of wins and losses
 
 
-var targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
-console.log(targetNum);
+
 // $('#number').append(targetNum);
 
-var counter = 0;
+
 var wins = 0;
 var losses = 0;
 
 
 $(document).ready(function(){
 
+  var counter = 0;
+  var targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
+  $('#number').append(targetNum);
+
   // reveal the Cartmans
-  $(".startBtn").on("click", function() {
+  $(".gems").one("click", function() {
     $(".gems").animate({ top: "50px", right: "500px" }, "fast");
     $(".gems").empty();
     $(".startBtn").addClass('display', 'none');
@@ -37,22 +40,15 @@ $(document).ready(function(){
       $('.gems').css("background-color","transparent");
       $('.gems').css("height","250px");
       $(imgCartman).attr('value', randomNum);
-
     }
-  });
  
-  $('.cartman-button').on('click', function () {
-    console.log("working")
-    // counter += $(this).val();
-    // console.log(counter);
+    $('.cartman-button').click(function () {
+      var cartmanValue = $(this).attr('value');
+      cartmanValue = parseInt(cartmanValue);
+      counter += cartmanValue;
+      console.log(counter);
+      $('#score').text(counter);
+    });
   });
-
-  // click the cartmans
-  $(".cartman-button").on("click", function() {
-    console.log('worked');
-  });
-
-
-
 });
 
