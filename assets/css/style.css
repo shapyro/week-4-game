@@ -8,17 +8,6 @@ body {
   background-image: url('../images/halftone-yellow.png');
 }
 
-/* .startBtn {
-  position:absolute; 
-  top:300; 
-  left: 80px; 
-  z-index: -20; 
-  height: 50px;
-  background: white;
-  margin: 43px;
-  padding: 20px;
-} */
-
 .gems {
   position:absolute; 
   top:50px; 

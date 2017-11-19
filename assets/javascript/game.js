@@ -6,10 +6,6 @@
 //  start game over and over keeping tallies of wins and losses
 
 
-
-// $('#number').append(targetNum);
-
-
 var wins = 0;
 var losses = 0;
 
@@ -24,7 +20,6 @@ $(document).ready(function(){
   $(".gems").one("click", function() {
     $(".gems").animate({ top: "50px", right: "500px" }, "fast");
     $(".gems").empty();
-    $(".startBtn").addClass('display', 'none');
     randomCartman();
     
     // Thinking about maybe picking random image on restart?
@@ -59,7 +54,8 @@ $(document).ready(function(){
         alert("you win");
         wins++;
         $('#wins').html("Wins: " + wins);
-        Restart();
+        // var counter = 0;
+        Reset();
       }
     }
 
@@ -68,14 +64,13 @@ $(document).ready(function(){
         alert("you lose");
         losses++;
         $('#losses').html("Losses: " + losses);
-        Restart();
+        // var counter = 0;
+        Reset();
       }
     }
 
-    function Restart() {
-      //$('.gems').empty();
-      randomCartman();
-      var counter = 0;
+    function Reset() {
+      counter = 0;
       $('#score').text(counter);
       var targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
       $('#number').html(targetNum);
