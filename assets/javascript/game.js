@@ -16,15 +16,12 @@ $(document).ready(function(){
   var targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
   $('#number').html(targetNum);
 
-  // reveal the Cartmans
+
+
   $(".gems").one("click", function() {
     $(".gems").animate({ top: "50px", right: "500px" }, "fast");
     $(".gems").empty();
-    randomCartman();
-    
-    // Thinking about maybe picking random image on restart?
 
-    function randomCartman(){
       var imgArray = ['assets/images/Cartman.jpg', 'assets/images/magicCartman.png', 'assets/images/normalCartman.png', 'assets/images/sadCartman.png']
       
       for (var i=0; i<imgArray.length; i++) {
@@ -36,22 +33,30 @@ $(document).ready(function(){
         $('.gems').css("background-image","none");
         $('.gems').css("background-color","transparent");
         $('.gems').css("height","250px");
+        $('.gems').css("width", "1500px");
         $(imgCartman).attr('value', randomNum);
       }
-    }
 
-    $('.cartman-button').click(function () {
-      var cartmanValue = $(this).attr('value');
-      cartmanValue = parseInt(cartmanValue);
-      counter += cartmanValue;
-      $('#score').text(counter);
-      checkWin();
-      checkLoss();
-    });
+      // var counter = 0;
+      // $('#score').text(counter);
+      // var targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
+      // $('#number').html(targetNum);
+
+    // function playGame(){
+      $('.cartman-button').click(function () {
+        var cartmanValue = $(this).attr('value');
+        cartmanValue = parseInt(cartmanValue);
+        counter += cartmanValue;
+        $('#score').text(counter);
+        console.log(counter);
+        checkWin();
+        checkLoss();
+      });
+    //}
 
     function checkWin() {
       if (counter === targetNum){
-        alert("you win");
+        alert("you win: " + counter + " = " + targetNum);
         wins++;
         $('#wins').html("Wins: " + wins);
         // var counter = 0;
@@ -61,7 +66,7 @@ $(document).ready(function(){
 
     function checkLoss() {
       if (counter > targetNum){
-        alert("you lose");
+        alert("you lose: " + counter + " > " + targetNum);
         losses++;
         $('#losses').html("Losses: " + losses);
         // var counter = 0;
@@ -72,8 +77,11 @@ $(document).ready(function(){
     function Reset() {
       counter = 0;
       $('#score').text(counter);
-      var targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
+      targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
       $('#number').html(targetNum);
+      // $('.cartman-button').remove();
+      // randomCartman();
+      //playGame();
     }
 
   });

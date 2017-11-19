@@ -8,9 +8,23 @@ body {
   background-image: url('../images/halftone-yellow.png');
 }
 
+header {
+  background: white;
+  height: 50px;
+  padding: 20px;
+}
+
+article {
+  position: absolute;
+  width: 300px;
+  background: beige;
+  margin: 30px;
+  padding: 30px;
+}
+
 .gems {
   position:absolute; 
-  top:50px; 
+  top:250px; 
   left: 80px; 
   z-index: -20; 
   height: 150px;
@@ -26,4 +40,23 @@ body {
   width: 200px; 
   height: 200px;
   margin: 10px;
+}
+
+#number {
+  background: orange;
+  position: absolute;
+  height: 50px;
+  margin: 30px;
+  right: 100px;
+  width: 138px;
+  padding: 20px;
+}
+
+#total {
+  background: green;
+  position: absolute;
+  height: 50px;
+  margin: 30px;
+  right: 100px;
+  top: 100px;
 }
