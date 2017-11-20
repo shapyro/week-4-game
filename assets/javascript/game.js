@@ -1,4 +1,4 @@
-//  Click a Cartman Game
+//  CLICK-A-CARTMAN GAME
 
 //  still need to reset cartman values
 
@@ -13,7 +13,7 @@ $(document).ready(function(){
   $('#number').html(targetNum);
 
   $(".gems").one("click", function() {
-    $(".gems").animate({ top: "50px", right: "500px" }, "fast");
+    $(".gems").animate({ top: "50px", right: "500px" }, "slow");
     $(".gems").empty();
 
     var imgArray = ['assets/images/Cartman.jpg', 'assets/images/magicCartman.png', 'assets/images/normalCartman.png', 'assets/images/sadCartman.png']
@@ -42,7 +42,7 @@ $(document).ready(function(){
 
     function checkWin() {
       if (counter === targetNum){
-        alert("you win: " + counter + " = " + targetNum);
+        // alert("you win: " + counter + " = " + targetNum);
         wins++;
         $('#wins').html("Wins: " + wins);
         $('#show').empty();
@@ -51,6 +51,9 @@ $(document).ready(function(){
         } else if (wins === 5) {
           var beef = new Audio("http://www.drodd.com/South-Park-Sound/eaten_beef.wav");
           beef.play();
+        } else {
+          var winSound = new Audio("assets/audio/dramatic.swf.mp3");
+          winSound.play();
         }
         Reset();
       }
@@ -58,10 +61,23 @@ $(document).ready(function(){
 
     function checkLoss() {
       if (counter > targetNum){
-        alert("you lose: " + counter + " > " + targetNum);
+        // alert("you lose: " + counter + " > " + targetNum);
         losses++;
         $('#losses').html("Losses: " + losses);
         $('#show').empty();
+        if (losses === 3 || losses === 6){
+          var weak = new Audio("http://www.shannon-g.net/fun/multimedia/sounds/sp/oh_weak.wav");
+          weak.play();
+        } else if (losses === 4) {
+          var school = new Audio("http://www.thesoundarchive.com/play-wav-files.asp?sound=spsounds/troublemakers.mp3");
+          school.play();
+        } else if (losses === 10) {
+          var wrong = new Audio("http://www.thesoundarchive.com/play-wav-files.asp?sound=spsounds/Dumbass.mp3");
+          wrong.play();
+        } else {
+          loseSound = new Audio("assets/audio/wrong-answer-sound-effect.mp3");
+          loseSound.play();
+        }
         hankey();
         Reset();
       }
