@@ -72,6 +72,10 @@ article {
   height: 75px;
 }
 
+.backgroundGreen{
+  background: rgb(102, 255, 0);
+}
+
 #show {
   width: 400px;
   background: transparent;

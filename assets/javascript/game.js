@@ -36,7 +36,6 @@ $(document).ready(function(){
       cartmanValue = parseInt(cartmanValue);
       counter += cartmanValue;
       $('#score').text(counter);
-      console.log(counter);
       checkWin();
       checkLoss();
     });
@@ -79,9 +78,6 @@ $(document).ready(function(){
       var imgHankey = $('<img>');
       $(imgHankey).attr('src', "https://i.imgur.com/4X9Q9.jpg")
       $('#show').append(imgHankey);
-    //   setTimeout(function() {
-    //     $('#show').hide();
-    // }, 5000);
     }
 
     function beefCake() {
