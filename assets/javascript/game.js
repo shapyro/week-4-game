@@ -1,6 +1,8 @@
 //  CLICK-A-CARTMAN GAME
 
 //  still need to reset cartman values
+//  would like to randomize the images each time
+//  does the for loop need to be different functions for scope?
 
 var wins = 0;
 var losses = 0;
@@ -69,7 +71,7 @@ $(document).ready(function(){
           var weak = new Audio("http://www.shannon-g.net/fun/multimedia/sounds/sp/oh_weak.wav");
           weak.play();
         } else if (losses === 4) {
-          var school = new Audio("http://www.thesoundarchive.com/play-wav-files.asp?sound=spsounds/troublemakers.mp3");
+          var school = new Audio("http://www.thesoundarchive.com/spsounds/troublemakers.mp3");
           school.play();
         } else if (losses === 10) {
           var wrong = new Audio("http://www.thesoundarchive.com/spsounds/Dumbass.mp3");
