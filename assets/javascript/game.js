@@ -72,7 +72,7 @@ $(document).ready(function(){
           var school = new Audio("http://www.thesoundarchive.com/play-wav-files.asp?sound=spsounds/troublemakers.mp3");
           school.play();
         } else if (losses === 10) {
-          var wrong = new Audio("http://www.thesoundarchive.com/play-wav-files.asp?sound=spsounds/Dumbass.mp3");
+          var wrong = new Audio("http://www.thesoundarchive.com/spsounds/Dumbass.mp3");
           wrong.play();
         } else {
           loseSound = new Audio("assets/audio/wrong-answer-sound-effect.mp3");
