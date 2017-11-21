@@ -18,6 +18,7 @@ header {
 #wins {
   margin: 10px;
 }
+
 #losses {
   margin: 10px;
 }
@@ -32,7 +33,7 @@ article {
 }
 
 .gems {
-  position:absolute; 
+  position:absolute;
   top:275px; 
   left: 100px; 
   z-index: -20; 
@@ -44,7 +45,14 @@ article {
   background-repeat: no-repeat;
   color: white;
 }
-
+/*
+.changeup {
+  background-image: none;
+  background-color: transparent;
+  height: 250px;
+  width: 1500px;
+}
+*/
 .cartman-image {
   width: 200px; 
   height: 200px;
@@ -83,3 +91,4 @@ article {
   position: absolute;
   top: 500px;
 }
+

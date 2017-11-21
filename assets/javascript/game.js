@@ -27,10 +27,12 @@ $(document).ready(function(){
         $(imgCartman).attr('value', randomNum);
         $('.gems').append(imgCartman);
         // CSS class variable?
+        //$('.gems').css('.changeup');
         $('.gems').css("background-image","none");
         $('.gems').css("background-color","transparent");
         $('.gems').css("height","250px");
-        $('.gems').css("width", "1500px"); 
+        $('.gems').css("width", "90%"); 
+        // $('.gems').css("width", "1500px"); 
       }
     
       $('.cartman-button').click(function () {
