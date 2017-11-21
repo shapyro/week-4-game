@@ -1,9 +1,5 @@
 //  CLICK-A-CARTMAN GAME
 
-//  still need to reset cartman values
-//  would like to randomize the images each time
-//  does the for loop need to be different functions for scope?
-
 var wins = 0;
 var losses = 0;
 
@@ -17,30 +13,35 @@ $(document).ready(function(){
   $(".gems").one("click", function() {
     $(".gems").animate({ top: "50px", right: "500px" }, "slow");
     $(".gems").empty();
+    startGame();
+  });
 
-    var imgArray = ['assets/images/Cartman.jpg', 'assets/images/magicCartman.png', 'assets/images/normalCartman.png', 'assets/images/sadCartman.png']
-      
-    for (var i=0; i<imgArray.length; i++) {
-      var randomNum = Math.floor(Math.random() * (12-1+1)) + 1;
-      var imgCartman = $('<img>');
-      $(imgCartman).addClass('cartman-button');
-      $(imgCartman).attr('src', imgArray[i]);
-      $('.gems').append(imgCartman);
-      $('.gems').css("background-image","none");
-      $('.gems').css("background-color","transparent");
-      $('.gems').css("height","250px");
-      $('.gems').css("width", "1500px");
-      $(imgCartman).attr('value', randomNum);
+    function startGame() {
+      var imgArray = ['assets/images/Cartman.jpg', 'assets/images/magicCartman.png', 'assets/images/normalCartman.png', 'assets/images/sadCartman.png']
+
+      for (var i=0; i<imgArray.length; i++) {
+        var randomNum = Math.floor(Math.random() * (12-1+1)) + 1;
+        var imgCartman = $('<img>');
+        $(imgCartman).addClass('cartman-button');
+        $(imgCartman).attr('src', imgArray[i]);
+        $(imgCartman).attr('value', randomNum);
+        $('.gems').append(imgCartman);
+        // CSS class variable?
+        $('.gems').css("background-image","none");
+        $('.gems').css("background-color","transparent");
+        $('.gems').css("height","250px");
+        $('.gems').css("width", "1500px"); 
+      }
+    
+      $('.cartman-button').click(function () {
+        var cartmanValue = $(this).attr('value');
+        cartmanValue = parseInt(cartmanValue);
+        counter += cartmanValue;
+        $('#score').text(counter);
+        checkWin();
+        checkLoss();
+      });
     }
-
-    $('.cartman-button').click(function () {
-      var cartmanValue = $(this).attr('value');
-      cartmanValue = parseInt(cartmanValue);
-      counter += cartmanValue;
-      $('#score').text(counter);
-      checkWin();
-      checkLoss();
-    });
 
     function checkWin() {
       if (counter === targetNum){
@@ -90,6 +91,8 @@ $(document).ready(function(){
       $('#score').text(counter);
       targetNum = Math.floor(Math.random() * (120-19+1)) + 19;
       $('#number').html(targetNum);
+      $(".gems").empty();
+      startGame();
     }
 
     function hankey() {
@@ -102,6 +105,5 @@ $(document).ready(function(){
       var audio = new Audio("http://www.thesoundarchive.com/spsounds/BeefCake-2.mp3");
       audio.play();
     }
-  });
 });
 
