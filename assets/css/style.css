@@ -44,14 +44,7 @@ article {
   background-repeat: no-repeat;
   color: white;
 }
-/*
-.changeup {
-  background-image: none;
-  background-color: transparent;
-  height: 250px;
-  width: 1500px;
-}
-*/
+
 .cartman-image {
   width: 200px; 
   height: 200px;
@@ -77,10 +70,6 @@ article {
   top: 100px;
   padding: 10px;
   height: 75px;
-}
-
-.backgroundGreen{
-  background: rgb(102, 255, 0);
 }
 
 #show {
