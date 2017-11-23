@@ -53,7 +53,6 @@ $(document).ready(function(){
       if (counter === targetNum){
         wins++;
         $('#wins').html("Wins: " + wins);
-        $('#show').empty();
         if (wins === 2) {
           beefCake();
         } else if (wins === 5) {
@@ -63,6 +62,9 @@ $(document).ready(function(){
           var winSound = new Audio("assets/audio/dramatic.swf.mp3");
           winSound.play();
         }
+        // $("#score").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+        //window.setTimeout(Reset(), 3000); 
+        $('#show').empty();
         Reset();
       }
     }
@@ -85,6 +87,7 @@ $(document).ready(function(){
           loseSound = new Audio("assets/audio/wrong-answer-sound-effect.mp3");
           loseSound.play();
         }
+        $('#show').empty();
         hankey();
         Reset();
       }
