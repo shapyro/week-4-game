@@ -28,8 +28,8 @@ $(document).ready(function(){
         var randomNum = Math.floor(Math.random() * (12-1+1)) + 1;
         var imgCartman = $('<img>');
         $(imgCartman).addClass('cartman-button');
-        $(imgCartman).attr('src', imgArray[i]);
-        $(imgCartman).attr('value', randomNum);
+        $(imgCartman).attr('src', imgArray[i]);  //  image assigned to element
+        $(imgCartman).attr('value', randomNum);  //  random number value assigned to element
         $('.gems').append(imgCartman);
         $('.gems').css("background-image","none");
         $('.gems').css("background-color","transparent");
@@ -67,7 +67,7 @@ $(document).ready(function(){
       }
     }
 
-    //  Did the user lose?  Does that mean he/she is a lusr?
+    //  Did the user lose?
     function checkLoss() {
       if (counter > targetNum){
         losses++;
@@ -91,7 +91,7 @@ $(document).ready(function(){
       }
     }
 
-    //  Can I get a reset?  Reset on aisle 9!!
+    //  Reset DOM elements and variabes for a new game
     function Reset() {
       counter = 0;
       $('#score').text(counter);
@@ -101,14 +101,14 @@ $(document).ready(function(){
       startGame();
     }
 
-    //  It just got weird
+    //  Function for a gif to be used for each loss
     function hankey() {
       var imgHankey = $('<img>');
       $(imgHankey).attr('src', "https://i.imgur.com/4X9Q9.jpg")
       $('#show').append(imgHankey);
     }
 
-    //  This sound is extra special for no reason at all, but just put all the sounds up above where needed
+    //  This sound is a function, but just put all other sounds up above where needed
     function beefCake() {
       var audio = new Audio("http://www.thesoundarchive.com/spsounds/BeefCake-2.mp3");
       audio.play();
